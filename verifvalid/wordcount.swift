@@ -15,10 +15,12 @@ func wordCountFile(path: String) -> Dictionary<String, Int> {
     var wordDictionary = Dictionary<String, Int>()
     do {
         
+        let toRemove = ["at", "a", "on", "by"]
         let contents = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
             .components(separatedBy: .punctuationCharacters)
             .joined()
             .components(separatedBy: .whitespacesAndNewlines)
+            .filter({!toRemove.contains($0)})
         
         for word in contents {
             if let count = wordDictionary[word] {

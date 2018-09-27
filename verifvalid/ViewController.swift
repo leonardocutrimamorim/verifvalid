@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         print(wordCount(s: "foo foo bar"))
         print(getContentsFromFile())
-        print(wordCountFile(path: "/Users/leonardoamorim/Desktop/verifvalid/teste.txt"))
+        print(wordCountFile(path: "/Users/leonardoamorim/Downloads/Cover Letter Festicket.txt"))
     }
 
 
