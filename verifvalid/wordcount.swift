@@ -32,6 +32,7 @@ func wordCountFile(path: String) -> Dictionary<String, Int> {
             .joined()
             .components(separatedBy: .whitespacesAndNewlines)
             .filter({!toRemove.contains($0)})
+            .map({$0.lowercased()})
         
         for word in contents {
             if let count = wordDictionary[word] {
