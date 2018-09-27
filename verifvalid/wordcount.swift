@@ -15,7 +15,18 @@ func wordCountFile(path: String) -> Dictionary<String, Int> {
     var wordDictionary = Dictionary<String, Int>()
     do {
         
-        let toRemove = ["at", "a", "on", "by"]
+        let toRemove = ["a", "an", "the", "some", "my", "your", "his", "her", "its", "our",
+                        "their", "whose", "this", "that", "these", "those", "which", "any",
+                        "another", "other", "what", "I", "you", "he", "she", "it", "we",
+                        "they", "me", "him", "us", "them", "mine", "yours", "hers", "ours",
+                        "yours", "theirs", "myself", "yourself", "himself", "herself",
+                        "itself", "ourselves", "yourselves", "themselves", "about", "above",
+                        "at", "before", "behind", "below", "beneath", "into", "inside",
+                        "in", "from", "for", "except", "during", "down", "despite", "by",
+                        "beyond", "between", "beside", "near", "of", "off", "on", "onto",
+                        "opposite", "out", "outside", "over", "past", "since", "than", "through",
+                        "to", "towards", "under", "underneath", "unlike", "until", "up", "upon",
+                        "via", "with", "within", "without"]
         let contents = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
             .components(separatedBy: .punctuationCharacters)
             .joined()
